@@ -8,6 +8,10 @@ export default function validateNumber(options) {
     const valueSpec = options.valueSpec;
     const type = getType(value);
 
+    if (type === 'NaN') {
+        return [new ValidationError(key, value, `number greater than or equal to 0 expected, NaN found`)];
+    }
+
     if (type !== 'number') {
         return [new ValidationError(key, value, `number expected, ${type} found`)];
     }

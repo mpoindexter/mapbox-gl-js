@@ -350,8 +350,6 @@ function determineLineBreaks(logicalInput: TaggedString,
                              spacing: number,
                              maxWidth: number,
                              glyphMap: {[string]: {[number]: ?StyleGlyph}}): Array<number> {
-    if (!maxWidth)
-        return [];
 
     if (!logicalInput)
         return [];
